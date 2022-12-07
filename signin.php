@@ -1,3 +1,10 @@
+<?php
+if (isset($_SESSION['user'])){
+    header('Location: signin.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,13 +56,13 @@
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
-                                <h3 class="text-primary" ><i class="fa me-2"></i style="color:orange">Auditoria Kempetro</h3>
+                                <h3 class="text-primary"><i class="fa me-2"></i >Auditoria Kempetro</h3>
                             </a>
-                            <h3>Entrar</h3>
+                            <h3>Acesse já!</h3>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="EmailInput" placeholder="name@example.com">
-                            <label for="floatingInput">Informe Email</label>
+                            <label for="floatingInput">Informe seu email</label>
                         </div>
                         <div class="form-floating mb-4">
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
@@ -68,8 +75,8 @@
                             </div> -->
                             <!-- <a href="">Forgot Password</a> -->
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
-                        <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Entrar</button>
+                        <p class="text-center mb-0">Não têm uma conta?<a href=""> Entrar em contato</a></p>
                     </div>
                 </div>
             </div>
