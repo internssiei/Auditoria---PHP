@@ -1,7 +1,11 @@
 <?php
 if (isset($_SESSION['user'])){
-    header('Location: signin.php');
-    exit;
+    header('Location: index.php');
+    exit();
+}else{
+    if(isset($_SESSION['mensagem'])){
+        echo '<div class="notification is-danger"><h3>ERRO:'. $_SESSION['mensagem'].'</h3></div>';
+    }  
 }
 ?>
 
@@ -59,20 +63,28 @@ if (isset($_SESSION['user'])){
                                 <h3 class="text-primary"><i class="fa me-2"></i >Auditoria Kempetro</h3>
                             </a>
                             <img src="img\logo-circular.png" alt=""style="width: 150px;">
-                          
+                            
                         </div>
-
-
+                        
                         <form action="login.php" method="POST" class="login100-form validate-form"> 
+                     
+
+                        <?php
+                                if(isset($_SESSION['mensagem'])){
+                                    echo '<div><h1>ERRO:'. $_SESSION['mensagem'].'</h1></div>';
+                                } 
+                                unset($_SESSION['mensagem']); 
+                                ?>
+
                         <div class="mb-3" >
                              <label for="floatingInput">Informe seu email</label>
-                            <input class="form-control" type="email" name="username" placeholder="User"placeholder="name@example.com">
+                            <input class="form-control" type="email" name="username" placeholder="E-mail"placeholder="name@example.com">
                             <!-- <input type="email" class="form-control" id="EmailInput" name="username" > -->
                            
                         </div>
                         <div class="mb-4">
                             <label for="floatingPassword">Senha</label>
-                            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+                            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Senha">
                             
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
@@ -81,6 +93,7 @@ if (isset($_SESSION['user'])){
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Entrar</button>
                         <p class="text-center mb-0">Não têm uma conta?<a href=""> Entrar em contato</a></p>
+                        
                         </form>
 
                     </div>
