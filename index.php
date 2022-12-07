@@ -59,7 +59,7 @@ $empresas = mysqli_query($conexao, $query);
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Auditoria</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -67,8 +67,15 @@ $empresas = mysqli_query($conexao, $query);
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
+                        <h6 class="mb-0">
+                            <?php
+                            foreach($_SESSION['user'] as $row){
+                                echo $row;
+                                break;
+                            }
+                            ?>
+                         </h6>
+                        <!-- <span>Admin</span> -->
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -191,77 +198,6 @@ $empresas = mysqli_query($conexao, $query);
                 </div>
             </nav>
             <!-- Navbar End -->
-
-<!-- 
-            <!-- Sale & Revenue Start
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-area fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start 
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             Sales Chart End -->
-
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
