@@ -3,6 +3,7 @@
 session_start();
 include('conexao.php');
 
+
 $email = mysqli_real_escape_string($conexao, $_POST['username']);
 $senha = mysqli_real_escape_string($conexao, $_POST['password']);
 
@@ -15,9 +16,6 @@ $row = mysqli_num_rows($result);
 
 if($userdata = mysqli_fetch_array($result)) {
     $_SESSION['user'] = $userdata;
-    unset($_POST['username']);
-    unset($_POST['password']);
-
     header("location: index.php"); 	 
    exit();
 } else {

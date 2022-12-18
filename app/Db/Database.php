@@ -3,35 +3,37 @@
 namespace App\Db;
 use \PDO;
 use \PDOException;
+use \App\Common\Enviroment;
 
 class Database{
+
 
 /**
  * 
  * nome da HOST a ser utilizada
  * @var string
  */
-    const HOST ='localhost';
+private $HOST = null;
 
 /**
  * 
  * nome da USUARIO a ser utilizada
  * @var string
  */
-    const USUARIO = 'root';
+private $USUARIO = null;
 /**
  * 
  * nome da SENHA a ser utilizada
  * @var string
  */
-    const SENHA = '';
+private $SENHA = null;
 
 /**
  * 
  * nome da DB a ser utilizada
  * @var string
  */
-    const DB = 'auditoria';
+private $DB = null;
     
 /**
  * 
@@ -56,6 +58,16 @@ private $connection;
  */
 
 public function __construct($table){
+   
+    $this->HOST = getenv('HOST');
+
+    $this->USUARIO =  getenv('USUARIO');
+
+    $this->SENHA =  getenv('SENHA');
+
+    $this->DB =  getenv('DB');
+    
+
 
 $this->table = $table;
 $this->setConnection();
@@ -71,7 +83,7 @@ $this->setConnection();
 public function setConnection(){
 
     try{  
-        $this->connection = new PDO("mysql:host=".self::HOST.";dbname=".self::DB."",self::USUARIO,self::SENHA);
+        $this->connection = new PDO("mysql:host=". $this->HOST.";dbname=". $this->DB."", $this->USUARIO, $this->SENHA);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $e) 
             {

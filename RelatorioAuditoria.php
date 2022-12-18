@@ -1,8 +1,8 @@
 <?php
 require __DIR__.'\vendor\autoload.php';
+include('conexao.php');
 use \App\Entity\Auditoria;
 
-include('conexao.php');
 session_start();
 if(!isset($_SESSION['user'])){
     header('Location: signin.php');

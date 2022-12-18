@@ -5,16 +5,10 @@ namespace App\Entity;
 use App\Db\Database; 
 use \PDO;
 
-class Projeto{
-/**
- * 
- * Identificador Unico do Projeto
- *  @var integer
- * 
- * 
- */
-public $id;
 
+
+class Projeto{
+    
 
 /**
  * 
