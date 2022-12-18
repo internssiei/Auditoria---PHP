@@ -58,7 +58,6 @@ private $connection;
  */
 
 public function __construct($table){
-   //$this->Ambientacao = new Enviroment();
    
     $this->HOST = getenv('HOST');
 

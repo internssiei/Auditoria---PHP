@@ -4,3 +4,4 @@
 use \App\Common\Enviroment;
 
 Enviroment::load(DIRETORIO);
+
