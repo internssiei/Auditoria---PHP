@@ -1,52 +1,126 @@
 <?php
+/**
+ * 
+ * CARREGANDO AUTOLOAD COMPOSER
+ * 
+ */
 require __DIR__.'\vendor\autoload.php';
+
+/**
+ * 
+ * INICIANDO SESSÃO
+ * 
+ */
+session_start();
+
+/**
+ * 
+ * CARREGANDO CONFIGURAÇÕES DE CONEXÃO COM O BANCO
+ * 
+ */
 include('conexao.php');
+
+/**
+ * 
+ * REFERÊNCIANDO O USO DA CLASSE AUDITORIA PARA A PÁGINA
+ * 
+ */
 use \App\Entity\Auditoria;
 
-session_start();
+
+/**
+ * 
+ * VERIFICANDO SESSÃO DO USUÁRIO
+ * 
+ */
 if(!isset($_SESSION['user'])){
     header('Location: signin.php');
 }else{
      $user = $_SESSION['user'];
-
-
 }
+
+/**
+ * 
+ * CARREGANDO SCRIPT CADASTRAR
+ * 
+ */
 include __DIR__.'\script\auditoria_script\Cadastrar.php';
+
+/**
+ * 
+ * CARREGANDO SCRIPT PARA CARREGAR A LISTA DE AUDITORIAS
+ * 
+ */
 include __DIR__.'\script\auditoria_script\Filtrar.php';
+
+/**
+ * 
+ * CARREGANDO SCRIPT ATUALIZAR
+ * 
+ */
 include __DIR__.'\script\auditoria_script\Atualizar.php';
+
+/**
+ * 
+ * CARREGANDO SCRIPT EXCLUIR
+ * 
+ */
 include __DIR__.'\script\auditoria_script\Excluir.php';
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
-//  ---------------------- HEADER
+/**
+ * 
+ * CARREGANDO HEADER
+ * 
+ */
 include __DIR__.'/includes/header.php';
+
 ?>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
-
-
 <?php
-//  ---------------------- SPINNER
+
+/**
+ * 
+ * CARREGANDO SPINNER
+ * 
+ */
 include __DIR__.'/includes/spinner.php';
 ?>
 
 <?php
-//  ----------------------   SIDEBAR
+
+/**
+ * 
+ * CARREGANDO SIDEBAR
+ * 
+ */
 include __DIR__.'/includes/sidebar.php';
 ?>
 
-                                <!-- Content Start -->
-                                <div class="content">
+        <!-- Content Start -->
+        <div class="content">
 <?php
-//  ---------------------- NAVBAR
+
+/**
+ * 
+ * CARREGANDO NAVBAR
+ * 
+ */
 include __DIR__.'/includes/navbar.php';
 ?>
 
 
-
+<!-- /**
+ * 
+ * FORMATANDO FILTROS
+ * 
+ */ -->
 <style>
 #formControlStatus, #formControlDisciplina, #filtroForm {
     display: block;
@@ -84,12 +158,19 @@ include __DIR__.'/includes/navbar.php';
 }
 
 </style>
+<!-- /**
+ * 
+ * FORMATANDO FILTROS END
+ * 
+ */ -->
+
               <!-- List Start -->
                                 <div class="container-fluid pt-4 px-4">
                                     <div class="bg-light text-center rounded p-4">
                                         <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <form method="get" id="filtroForm" class="form-control d-none d-md-flex ms-1 mb-0">
 
+                                         <!-- Form filtro Start -->
+                                        <form method="get" id="filtroForm" class="form-control d-none d-md-flex ms-1 mb-0">
                                             <input type="integer" style="display:none" class="form-control" name="projeto_id" id="projeto_id"
                                                 placeholder="Id" value="<?=$_GET['projeto_id']?>">
                                                 <div class="form-floating" id="formControlDisciplina">
@@ -121,78 +202,57 @@ include __DIR__.'/includes/navbar.php';
                                                         </select>
                                                     <label for="FilterStatusSelect">Status</label>
                                             </div>
-
-
-
-
-
                                             <button type="submit" class="btn btn-primary m-2" style="left: 5px;">Filtrar</button>
-
-
-
-
-
-
-
-
                                         </form>
-<!--
-                                    <form method="get" class="form-control d-none d-md-flex ms-2 mb-0">
+                                        <!-- Form filtro END -->
+                                    <button type="button" class="btn btn-primary g-4" onclick="openModal()" data-toggle="modal" data-target="#exampleModal" data-whatever="testestes">Cadastrar</button>
 
-                                    <div class="form-floating" id="formControlDisciplinal">
-                                        <select class="form-select form-control border-0" id="disciplina" name="disciplina"
-                                            aria-label="Floating label select example" >
-                                            <option selected disabled value="">Selecione  </option>
-                                                    <?php
-                                                        // if (mysqli_num_rows($querydisciplina)) {
-                                                        //     while ($row = mysqli_fetch_array($querydisciplina)) {
-                                                        //         echo "<option value=".$row['disciplina'].">{$row['disciplina']}</td>";
-                                                        //     }
-                                                        // }
-                                                    ?>
-                                        </select>
-                                        <label for="disciplina">Disciplina</label>
-                                    </div>
 
-                                    <div class="form-floating" id="formControlStatus">
-                                        <select class="form-select form-control border-0" id="FilterStatusSelect" name="FilterStatusSelect"
-                                            aria-label="Floating label select example" >
-                                            <option selected disabled value="">Selecione  </option>
-                                                    <?php
-                                                        // if (mysqli_num_rows($queryStatus)) {
-                                                        //     while ($row = mysqli_fetch_array($queryStatus)) {
-                                                        //         echo "<option value=".$row['situacao'].">{$row['situacao']}</td>";
-                                                        //     }
-                                                        // }
-                                                    ?>
-                                        </select>
-                                        <label for="FilterStatusSelect">Status</label>
-                                    </div> -->
 
-                                    </form>
-
-                                <button type="button" class="btn btn-primary g-4" onclick="openModal()" data-toggle="modal" data-target="#exampleModal" data-whatever="testestes">Cadastrar</button>
 <?php
-//  -----------MODAIS-----------
+
+/**
+ * 
+ * CARREGANDO MODAIS DE CADASTRO E ATUALIZAÇÃO
+ * 
+ */
 include __DIR__.'/includes/Auditoria/modal.php';
-include __DIR__.'/includes/Auditoria/modalUpdate.php';
+include __DIR__.'/includes/Auditoria/modalUpdate.php';                                                                     
 ?>
-            </div>
+</div> 
+                    <!--/**
+                        * 
+                        * INICIANDO CARREGAMENTO DA TABELA RESPONSIVA
+                        * 
+                        */ -->
                     <div class="table-responsive">
-<?php
-//  ---------------------- TABELA
-include __DIR__.'/includes/Auditoria/table.php';
-?>
+                        <?php
+                         /**
+                         * 
+                         * CARREGANDO TABELA
+                         * 
+                         */ 
+                        include __DIR__.'/includes/Auditoria/table.php';
+                        ?>
                     </div>
                 </div>
             </div>
 <!-- Footer Start -->
 <?php
+ /**
+                         * 
+                         * CARREGANDO FOOTER
+                         * 
+                         */ 
 include __DIR__.'/includes/footer.php';
 
+ /**
+                         * 
+                         * CARREGANDO MODAL EXCLUSÃO
+                         * 
+                         */ 
 include __DIR__.'/includes/confirmarExclusao.php';
 ?>
-<!-- Footer End -->
 
 </div>
 <!-- Content End -->
@@ -220,7 +280,7 @@ include __DIR__.'/includes/confirmarExclusao.php';
 
 
 
-
+<!-- func abrir modal para cadastro Javascript -->
 <script type="text/javascript">
     function openModal(){
         $('#AuditoriaModal').modal('show');

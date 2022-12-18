@@ -1,17 +1,19 @@
 <?php
+/**
+ * 
+ * CLASSE PARA INSTANCIAR CONEXÃO COM O BANCO
+ * Utilizando do composer para carregar os arquivos e dependências 
+ * Setando uma variável para sinalizar o diretório que será repassado na app.php
+ * 
+ */
 require __DIR__.'\vendor\autoload.php';
 
-use \App\Common\Enviroment;
+CONST DIRETORIO = __DIR__;
 
-Enviroment::load(__DIR__);
-   //print_r($env);
-define('HOST', getenv('HOST'));
-define('USUARIO', getenv('USUARIO'));
-define('SENHA', getenv('SENHA'));
-define('DB', getenv('DB'));
+include __DIR__.'\app\app.php';
 
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível conectar');
-$con = new \PDO("mysql:host=".HOST.";dbname=".DB."",USUARIO,SENHA);
+$conexao = mysqli_connect(getenv('HOST'), getenv('USUARIO'), getenv('SENHA'), getenv('DB')) or die ('Não foi possível conectar');
+//$con = new \PDO("mysql:host=".getenv('HOST').";dbname=".getenv('DB')."",getenv('USUARIO'),getenv('SENHA'));
 ?>
 

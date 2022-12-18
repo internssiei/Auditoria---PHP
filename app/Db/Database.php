@@ -3,10 +3,9 @@
 namespace App\Db;
 use \PDO;
 use \PDOException;
-use \App\Common\Enviroment;
+
 
 class Database{
-
 
 /**
  * 
@@ -49,6 +48,7 @@ private $DB = null;
  */
 private $connection;
 
+
 /**
  * 
  * Definir tabela e conexão
@@ -58,6 +58,7 @@ private $connection;
  */
 
 public function __construct($table){
+   //$this->Ambientacao = new Enviroment();
    
     $this->HOST = getenv('HOST');
 
@@ -76,13 +77,14 @@ $this->setConnection();
 /**
  * 
  * 
- * 
+ * Constrói a conexão com o banco
  * 
  * 
  */
 public function setConnection(){
 
     try{  
+        
         $this->connection = new PDO("mysql:host=". $this->HOST.";dbname=". $this->DB."", $this->USUARIO, $this->SENHA);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $e) 
@@ -90,10 +92,15 @@ public function setConnection(){
                 die('setConnection: Não foi possivel se conectar');         
             }
     }
+
 /** 
+ * 
+ * Função para insert de valores
+ * 
  * @param array
  * 
  * @return integer
+ * 
  */
 public function insert($values){
         $fields = array_keys($values);
@@ -107,6 +114,7 @@ public function insert($values){
 
  /**
  * 
+ *  Função para Update de valores
  * 
  * @param string
  * @param array
@@ -126,6 +134,7 @@ public function insert($values){
 
 /**
  * 
+ *  Função para Delete de valores
  * 
  * @param string
  * 
@@ -145,6 +154,7 @@ public function delete($where){
 
 /**
  * 
+ *  Função para executar a query
  * 
  * @param string
  * @param array
@@ -168,6 +178,8 @@ public function execute($query, $params = []){
 
 /**
  * 
+ * 
+ *  Função para trazer uma lista de valores
  * 
  * @param string
  * @param string
