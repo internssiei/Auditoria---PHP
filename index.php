@@ -1,4 +1,12 @@
 <?php
+session_start();
+if(!isset($_SESSION['user'])){
+    header('Location: signin.php');
+}else{
+     $user = $_SESSION['user'];
+    
+
+}
 require __DIR__.'\vendor\autoload.php';
 include('conexao.php');
 include('conexaoAzure.php');
@@ -13,14 +21,7 @@ include __DIR__.'\script\Router.php';
 use App\Entity\Projeto;
 
 
-session_start();
-if(!isset($_SESSION['user'])){
-    header('Location: signin.php');
-}else{
-     $user = $_SESSION['user'];
-    
 
-}
 ?>
 
 

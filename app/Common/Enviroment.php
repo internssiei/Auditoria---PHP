@@ -50,7 +50,10 @@ private $DB = null;
             }else{
                 $lines = file($dir.'\.env');
                 foreach ($lines as $line) {
-                    putenv(trim($line));                 
+                    // print_r($lines);
+                    // exit;
+                    putenv(trim($line)); 
+
             }
           return true;
         }
