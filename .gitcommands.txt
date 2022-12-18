@@ -4,14 +4,15 @@ git init
 
 git rm -r --cached .
 
-git remote add deployGit ***
+git remote add deployGit (LINK AQUI)
+
 git branch dev
 git branch master
 git branch main
 
 git add .
 
-git commit -m "Commit_******"
+git commit -m "Commit_(INFO DO COMMIT AQUI))"
 
 git push -f deployGit dev
 
