@@ -1,0 +1,15 @@
+
+
+git remote add deployGit https://github.com/internssiei/Auditoria---PHP.git
+
+git branch dev
+
+git add .
+
+git commit -m "Commit_******"
+
+git push -f 
+
+
+
+git rm -r --cached .
