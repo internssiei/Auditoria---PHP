@@ -7,7 +7,7 @@ $email = mysqli_real_escape_string($conexao, $_POST['username']);
 $senha = mysqli_real_escape_string($conexao, $_POST['password']);
 
 
-$query = "SELECT * FROM `usuarios` where email = '{$email}' and password = '{$senha}'";
+$query = "SELECT * FROM usuarios where email = '{$email}' and password = '{$senha}'";
 //$query = "select * from NOVOSITE where usuario = 'dtime' and senha = md5('internssiei')";
 $result = mysqli_query($conexao, $query);
 
