@@ -12,9 +12,9 @@
       <form method="post">                                     <!------ID DIV-------->
                     <div class="form-floating form-group">
                         <input type="integer" class="form-control" name="ConfirmIDId" id="ConfirmIDId"
-                            placeholder="Id" required>
+                            placeholder="Id" style="display:none;" required>
                             <p>Você deseja excluir esse projeto?</p>
-                        <label for="ConfirmIDId">id</label>
+                        <label style="display:none;" for="ConfirmIDId">id</label>
                     </div>
 
                     <div class="modal-footer">
