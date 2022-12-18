@@ -7,15 +7,15 @@ if(!isset($_SESSION['user'])){
     
 
 }
-require __DIR__.'\vendor\autoload.php';
+require __DIR__.'/vendor/autoload.php';
 include('conexao.php');
 include('conexaoAzure.php');
 
-include __DIR__.'\script\Cadastrar.php';
-include __DIR__.'\script\Atualizar.php';
-include __DIR__.'\script\Excluir.php';
-include __DIR__.'\script\Filtrar.php';
-include __DIR__.'\script\Router.php';
+include __DIR__.'/script/Cadastrar.php';
+include __DIR__.'/script/Atualizar.php';
+include __DIR__.'/script/Excluir.php';
+include __DIR__.'/script/Filtrar.php';
+include __DIR__.'/script/Router.php';
 
 
 use App\Entity\Projeto;

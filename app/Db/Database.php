@@ -84,10 +84,12 @@ public function setConnection(){
 
     try{  
         
+
         $this->connection = new PDO("mysql:host=". $this->HOST.";dbname=". $this->DB."", $this->USUARIO, $this->SENHA);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $e) 
             {
+                
                 die('setConnection: Não foi possivel se conectar');         
             }
     }
