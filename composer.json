@@ -1,0 +1,8 @@
+{
+    "name":"kemp/auditoria",
+    "autoload":{
+      "psr-4":{
+        "App\\":"app/"
+      }
+    }
+}
