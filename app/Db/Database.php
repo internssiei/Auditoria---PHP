@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * 
+ * 
+ * Interface Database
+ * 
+ */
 namespace App\Db;
 use \PDO;
 use \PDOException;
