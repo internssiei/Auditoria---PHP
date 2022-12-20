@@ -13,7 +13,9 @@
                     <div class="form-floating form-group">
                         <input type="integer" class="form-control" name="ConfirmIDId" id="ConfirmIDId"
                             placeholder="Id" style="display:none;" required>
-                            <p>Você deseja excluir esse projeto?</p>
+                            
+                            <p><br>Você deseja excluir esse ítem?<br></p>
+                             
                         <label style="display:none;" for="ConfirmIDId">id</label>
                     </div>
 

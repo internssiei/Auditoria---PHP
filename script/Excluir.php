@@ -8,6 +8,7 @@ switch (get_post_action('Excluir')) {
             //CONSULTA PROJETO
              
               $obDeleteProjeto = Projeto::getProjeto($_POST['ConfirmIDId']);
+              
               $obDeleteProjeto->excluir();
            
               if(!$obDeleteProjeto instanceof Projeto){

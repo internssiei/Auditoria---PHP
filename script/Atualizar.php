@@ -24,7 +24,7 @@ switch (get_post_action('Atualizar')) {
               
           
               header('location: index.php?status=error');
-              exit;
+              
             }
           
           //Validando POST
@@ -52,8 +52,8 @@ switch (get_post_action('Atualizar')) {
             unset($_POST['UpClienteSelect']);
             unset($_POST['UpLocalSelect']);
             unset($_POST['UpStatusSelect']);
+
             header('location: index.php?Status=Sucess');
-            exit;
           }
   
         }

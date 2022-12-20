@@ -1,9 +1,9 @@
 <?php
-   $query = "select DISTINCT(operacao) FROM projetos ORDER BY operacao ASC;";
-   $query2 = "select DISTINCT(plataforma) FROM projetos;";
-   $query3 = "select DISTINCT(clienteUn) FROM projetos;";
-   $query4 = "select DISTINCT(local) FROM projetos;";
-   $query5 = "select DISTINCT(situacao) FROM projetos WHERE situacao IS NOT NULL AND situacao != '';";
+   $query = "select DISTINCT(operacao) FROM Audit_Projetos ORDER BY operacao ASC;";
+   $query2 = "select DISTINCT(plataforma) FROM Audit_Projetos;";
+   $query3 = "select DISTINCT(clienteUn) FROM Audit_Projetos;";
+   $query4 = "select DISTINCT(local) FROM Audit_Projetos;";
+   $query5 = "select DISTINCT(situacao) FROM Audit_Projetos WHERE situacao IS NOT NULL AND situacao != '';";
    $operacao = mysqli_query($conexao, $query);
    $plataforma = mysqli_query($conexao, $query2);
    $cliente = mysqli_query($conexao, $query3);
@@ -45,10 +45,6 @@
                               </select>
                               <label for="UpOperacaoSelect">Operação</label>
                           </div>
-
-
-
-
 
 
 
@@ -139,7 +135,7 @@
                                               </div>
                                                <!------ID DIV-------->
                                             <br>         
-                                <button name ="Auditoria" onclick="send('Auditoria')" class="btn btn-primary w-100 m-2"  type="submit">Abrir Auditoria</button>
+                                <button name ="Auditoria" class="btn btn-primary w-100 m-2"  type="submit">Abrir Auditoria</button>
                           
 
                                   <!-- ----------------- END SELECT SECTION----------------------- -->
@@ -168,6 +164,7 @@ function OpenConfirmModal(){
         $('#ConfirmModal').modal('show');
     } 
 
+    
   
     function closeUpdateModal(){
       //alert("teste");

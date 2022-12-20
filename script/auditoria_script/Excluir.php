@@ -13,7 +13,7 @@ switch (get_post_action('Excluir')) {
               if(!$obDeleteProjeto instanceof Auditoria){
             
                 header('location: RelatorioAuditoria.php?projeto_id='.$_GET['projeto_id']);
-                exit;
+                
               }
               
               header('location: RelatorioAuditoria.php?projeto_id='.$_GET['projeto_id']);

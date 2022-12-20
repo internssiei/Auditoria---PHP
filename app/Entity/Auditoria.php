@@ -165,7 +165,8 @@ public function cadastrar(){
      * @return array
      *  */        
     public static function getAuditorias($where=null, $order=null, $limit=null){
-
+        // print_r((new Database('itensauditoria'))->select('Id ='.$id)->fetchObject(self::class));  
+        // exit;
         return(new Database('itensauditoria'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
@@ -179,7 +180,7 @@ public function cadastrar(){
      * @return Projeto
      *  */
     public static function getAuditoria($id){ 
-        //print_r((new Database('itensauditoria'))->select('Id ='.$id)->fetchObject(self::class));  
+        
         return (new Database('itensauditoria'))->select('Id ='.$id)->fetchObject(self::class);
 
     }

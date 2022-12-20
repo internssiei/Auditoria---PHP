@@ -33,7 +33,7 @@ switch (get_post_action('Atualizar')) {
             unset($_POST['Resposta']);
 
             header('location: RelatorioAuditoria.php?projeto_id='.$_GET['projeto_id']);
-            exit;
+           
           
   
         }

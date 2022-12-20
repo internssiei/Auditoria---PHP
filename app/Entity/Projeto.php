@@ -108,7 +108,7 @@ public $liberacao;
 public function cadastrar(){
 
 
-    $obDatabase = new Database('projetos');
+    $obDatabase = new Database('Audit_Projetos');
     $this->ID = $obDatabase->insert([
                             'projeto'=> $this->projeto,
                             'area'=> $this->area,
@@ -132,7 +132,7 @@ public function cadastrar(){
  */
 
  public function atualizar(){
-    $obDatabase = new Database('projetos');
+    $obDatabase = new Database('Audit_Projetos');
     return $obDatabase->update('ID = '.$this->id, [
                             'projeto'=> $this->projeto,
                             'area'=> $this->area,
@@ -154,7 +154,7 @@ public function cadastrar(){
  */
 
  public function excluir(){
-    $obDatabase = new Database('projetos');
+    $obDatabase = new Database('Audit_Projetos');
     return $obDatabase->delete('ID ='.$this->ID);                                
                 return true;         
             }
@@ -176,7 +176,7 @@ public function cadastrar(){
      *  */        
     public static function getProjetos($where=null, $order=null, $limit=null){
 
-        return(new Database('projetos'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS, self::class);
+        return(new Database('Audit_Projetos'))->select($where,$order,$limit)->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
     /**
@@ -189,8 +189,8 @@ public function cadastrar(){
      * @return Projeto
      *  */
     public static function getProjeto($id){ 
-        print_r((new Database('projetos'))->select('ID ='.$id)->fetchObject(self::class));  
-        return (new Database('projetos'))->select('ID ='.$id)->fetchObject(self::class);
+      //  print_r((new Database('Audit_Projetos'))->select('ID ='.$id)->fetchObject(self::class));  
+        return (new Database('Audit_Projetos'))->select('ID ='.$id)->fetchObject(self::class);
 
     }
 }
