@@ -177,11 +177,6 @@
                                             catch{
                                             }
                                         }
-
-                       //debugger;
-                        //Recupere o Id do registro e passe para o seu modal
-                        //var text = $("#textarea").val();
-                        //$("#modal_body").html(id);
                         $('#UpdateAuditoriaModal').modal('show');
 	                });
 

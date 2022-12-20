@@ -1,24 +1,28 @@
 <?php
 /**
  * 
- * CARREGANDO AUTOLOAD COMPOSER
- * 
- */
-require __DIR__.'\vendor\autoload.php';
-
-/**
- * 
  * INICIANDO SESSÃO
  * 
  */
 session_start();
+if(!isset($_SESSION['user'])){
+    header('Location: signin.php');
+}else{
+     $user = $_SESSION['user'];
+}
+require __DIR__.'/vendor/autoload.php';
+include('conexao.php');
+
 
 /**
  * 
- * CARREGANDO CONFIGURAÇÕES DE CONEXÃO COM O BANCO
+ * CARREGANDO SCRIPT CADASTRAR
  * 
  */
-include('conexao.php');
+include __DIR__.'/script/auditoria_script/Cadastrar.php';
+include __DIR__.'/script/auditoria_script/Atualizar.php';
+include __DIR__.'/script/auditoria_script/Excluir.php';
+include __DIR__.'/script/auditoria_script/Filtrar.php';
 
 /**
  * 
@@ -26,47 +30,6 @@ include('conexao.php');
  * 
  */
 use \App\Entity\Auditoria;
-
-
-/**
- * 
- * VERIFICANDO SESSÃO DO USUÁRIO
- * 
- */
-if(!isset($_SESSION['user'])){
-    header('Location: signin.php');
-}else{
-     $user = $_SESSION['user'];
-}
-
-/**
- * 
- * CARREGANDO SCRIPT CADASTRAR
- * 
- */
-include __DIR__.'\script\auditoria_script\Cadastrar.php';
-
-/**
- * 
- * CARREGANDO SCRIPT PARA CARREGAR A LISTA DE AUDITORIAS
- * 
- */
-include __DIR__.'\script\auditoria_script\Filtrar.php';
-
-/**
- * 
- * CARREGANDO SCRIPT ATUALIZAR
- * 
- */
-include __DIR__.'\script\auditoria_script\Atualizar.php';
-
-/**
- * 
- * CARREGANDO SCRIPT EXCLUIR
- * 
- */
-include __DIR__.'\script\auditoria_script\Excluir.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -94,12 +57,6 @@ include __DIR__.'/includes/spinner.php';
 ?>
 
 <?php
-
-/**
- * 
- * CARREGANDO SIDEBAR
- * 
- */
 include __DIR__.'/includes/sidebar.php';
 ?>
 
@@ -107,20 +64,8 @@ include __DIR__.'/includes/sidebar.php';
         <div class="content">
 <?php
 
-/**
- * 
- * CARREGANDO NAVBAR
- * 
- */
 include __DIR__.'/includes/navbar.php';
 ?>
-
-
-<!-- /**
- * 
- * FORMATANDO FILTROS
- * 
- */ -->
 <style>
 #formControlStatus, #formControlDisciplina, #filtroForm {
     display: block;
@@ -148,7 +93,7 @@ include __DIR__.'/includes/navbar.php';
     line-height: 1.5;
     color: #757575;
     background-color: #fff;
-    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 16px 12px;
@@ -251,7 +196,7 @@ include __DIR__.'/includes/footer.php';
                          * CARREGANDO MODAL EXCLUSÃO
                          * 
                          */ 
-include __DIR__.'/includes/confirmarExclusao.php';
+include __DIR__.'/includes/Auditoria/confirmarExclusao.php';
 ?>
 
 </div>

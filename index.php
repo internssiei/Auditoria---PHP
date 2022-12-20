@@ -1,15 +1,23 @@
 <?php
+/**
+ * 
+ * 
+ * 
+ * PÁGINA INICIAL AUDITORIA
+ * 
+ * 
+ * 
+ */
 session_start();
 if(!isset($_SESSION['user'])){
     header('Location: signin.php');
 }else{
      $user = $_SESSION['user'];
-    
-
 }
+
 require __DIR__.'/vendor/autoload.php';
 include('conexao.php');
-include('conexaoAzure.php');
+// include('conexaoAzure.php');
 
 include __DIR__.'/script/Cadastrar.php';
 include __DIR__.'/script/Atualizar.php';

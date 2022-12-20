@@ -4,7 +4,7 @@
  * CLASSE PARA INSTANCIAR CONEXÃO COM O BANCO
  * Utilizando do composer para carregar os arquivos e dependências 
  * Setando uma variável para sinalizar o diretório que será repassado na app.php
- * 
+ * BELEZA BELEZA
  */
 require __DIR__.'/vendor/autoload.php';
 

@@ -1,8 +1,8 @@
 <?php
-                            //CONEXÃO UTILIZANDO AS EXTENSÕES EM .DLLS DO PHP
-                             /**
-                              * Para utilizar basta colocar na pasta de referências dos plugins da php.ini
-                              */
+    //                         CONEXÃO UTILIZANDO AS EXTENSÕES EM .DLLS DO PHP
+    //                          /**
+    //                           * Para utilizar basta colocar na pasta de referências dos plugins da php.ini
+    //                           */
     // $serverName = "BDKEMPETRO.DATABASE.WINDOWS.NET"; // update me
     // $connectionOptions = array(
     //     "Database" => "BDKEMPETRO", // update me

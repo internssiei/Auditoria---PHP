@@ -189,7 +189,7 @@ public function cadastrar(){
      * @return Projeto
      *  */
     public static function getProjeto($id){ 
-        print_r((new Database('Audit_Projetos'))->select('ID ='.$id)->fetchObject(self::class));  
+      //  print_r((new Database('Audit_Projetos'))->select('ID ='.$id)->fetchObject(self::class));  
         return (new Database('Audit_Projetos'))->select('ID ='.$id)->fetchObject(self::class);
 
     }

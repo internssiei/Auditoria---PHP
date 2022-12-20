@@ -36,21 +36,7 @@
                                   placeholder="Área" required>
                               <label for="AreaId">Área</label>
                           </div>
-<!-- 
-                          <div class="form-floating form-group mb-3">
-                              <select class="form-select" id="OperacaoSelect" name="OperacaoSelect" 
-                                aria-label="Floating label select example" required>
-                                 <option selected disabled value="">Selecione uma Operação</option> 
-                              <?php
-                                //   if (mysqli_num_rows($operacao)) {
-                                //     while ($row = mysqli_fetch_array($operacao)) {
-                                //         echo "<option value=".$row['operacao'].">{$row['operacao']}</td>";
-                                //     }
-                                // } 
-                              ?> 
-                              </select>
-                              <label for="OperacaoSelect">Selecione uma Operação</label>
-                          </div> -->
+                          
                           <div class="form-floating form-group mb-3">
                                <select class="form-select" id="OperacaoSelect" name="OperacaoSelect" 
                                 aria-label="Floating label select example" required>
@@ -63,10 +49,6 @@
                                  } 
                               ?> 
                               </select>
-                              
-                              <!-- <input type="text" class="form-control" id="OperacaoSelect" name="OperacaoSelect"
-                                  placeholder="Operação" required>
-                               -->
                           
                               <label for="OperacaoSelect">Operação</label>
                           </div>

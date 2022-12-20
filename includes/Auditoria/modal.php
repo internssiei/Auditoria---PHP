@@ -36,7 +36,7 @@ $situacao = mysqli_query($conexao, $query2);
 
                           <div class="form-floating form-group mb-3">
                                <select class="form-select" id="DisciplinaSelect" name="DisciplinaSelect" 
-                                aria-label="Floating label select example" >
+                                aria-label="Floating label select example" required>
                                  <option selected disabled value="">Selecione uma Disciplina</option> 
                                  <?php
                                    if (mysqli_num_rows($disciplina)) {
@@ -46,10 +46,6 @@ $situacao = mysqli_query($conexao, $query2);
                                  } 
                               ?> 
                               </select>
-                              
-                              <!-- <input type="text" class="form-control" id="OperacaoSelect" name="OperacaoSelect"
-                                  placeholder="Operação" required>
-                               -->
                           
                               <label for="DisciplinaSelect">Disciplina</label>
                           </div>
@@ -59,7 +55,7 @@ $situacao = mysqli_query($conexao, $query2);
 
                           <div class="form-floating form-group">
                               <textarea class="form-control" placeholder="Informe o título do projeto"
-                                  id="Descricao" name="Descricao" style="height: 100px;" required></textarea >
+                                  id="Descricao" name="Descricao" style="height: 100px;" required ></textarea >
                               <label for="Descricao">Descrição</label>
                           </div>
                               
@@ -67,7 +63,7 @@ $situacao = mysqli_query($conexao, $query2);
                               <!-- -----------------SELECT SECTION----------------------- -->
                           <div class="form-floating form-group mb-1 col-4" style="display: inline-block;">
                               <select class="form-select" id="SituacaoSelect" name="SituacaoSelect" 
-                                aria-label="Floating label select example" >
+                                aria-label="Floating label select example" required>
                                 <option selected disabled value="">Situação</option>
                               <?php
                                if (mysqli_num_rows($situacao)) {
@@ -89,11 +85,6 @@ $situacao = mysqli_query($conexao, $query2);
                                   id="Resposta" name="Resposta" style="height: 100px;"></textarea >
                               <label for="Resposta">Resposta</label>
                           </div>
-                       
-                          
-                          
-                       
-
 
                                   <!-- ----------------- END SELECT SECTION----------------------- -->
                   </div>

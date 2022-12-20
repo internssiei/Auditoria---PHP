@@ -1,11 +1,8 @@
 <?php
       $query = "select DISTINCT(disciplina) FROM itensauditoria WHERE disciplina != ''  ORDER BY disciplina ASC;";
       $query2 = "select DISTINCT(situacao) FROM itensauditoria WHERE situacao != '' ORDER BY situacao ASC;";
-  
       $disciplina = mysqli_query($conexao, $query);
       $situacao = mysqli_query($conexao, $query2);
- 
-
 ?>
 
 <div class="modal fade" id="UpdateAuditoriaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -23,7 +20,7 @@
                 <div class="modal-body">      
                   <div class="bg-light rounded h-100 p-4">
                   <div class="form-floating form-group">
-                    <img id="UpImgEvidenciaId" style="max-width : 200px; max-heigth : 200px" src="" alt="">
+                    <img id="UpImgEvidenciaId" style="max-width : 200px;" src="" alt="">
                   </div>
                   <br>
                   <div class="form-floating form-group mb-3">

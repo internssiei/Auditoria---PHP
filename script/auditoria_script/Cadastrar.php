@@ -42,7 +42,6 @@ unset($_POST['SituacaoSelect']);
 unset($_POST['Resposta']);
 
 header('location: RelatorioAuditoria.php?projeto_id='.$_GET['projeto_id']);
-exit;
 
                     }
 

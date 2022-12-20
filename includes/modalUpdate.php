@@ -168,6 +168,7 @@ function OpenConfirmModal(){
         $('#ConfirmModal').modal('show');
     } 
 
+    
   
     function closeUpdateModal(){
       //alert("teste");
