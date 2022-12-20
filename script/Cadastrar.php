@@ -16,6 +16,7 @@ use \App\Entity\Projeto;
    $obProj->local = $_POST['LocalSelect'];
    $obProj->situacao = $_POST['StatusSelect'];
    $obProj->cadastrar();
+   
    header('location: index.php?Status=Sucess');
    exit;
 }

@@ -1,14 +1,10 @@
 <?php
       $query = "select DISTINCT(disciplina) FROM itensauditoria WHERE disciplina != ''  ORDER BY disciplina ASC;";
       $query2 = "select DISTINCT(situacao) FROM itensauditoria WHERE situacao != '' ORDER BY situacao ASC;";
-  //  $query3 = "select DISTINCT(clienteUn) FROM projetos;";
-  //  $query4 = "select DISTINCT(local) FROM projetos;";
-  //  $query5 = "select DISTINCT(situacao) FROM projetos WHERE situacao IS NOT NULL AND situacao != '';";
+  
       $disciplina = mysqli_query($conexao, $query);
       $situacao = mysqli_query($conexao, $query2);
-  //  $cliente = mysqli_query($conexao, $query3);
-  //  $local = mysqli_query($conexao, $query4);
-  //  $status = mysqli_query($conexao, $query5);
+ 
 
 ?>
 
