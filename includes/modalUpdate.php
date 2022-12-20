@@ -49,6 +49,10 @@
 
 
 
+
+
+
+
                           <div class="form-floating form-group mb-3">
                               <input type="text" class="form-control" id="UpAreaId" name="UpAreaId"
                                   placeholder="Área" required>
@@ -135,7 +139,7 @@
                                               </div>
                                                <!------ID DIV-------->
                                             <br>         
-                                <button name ="Auditoria" class="btn btn-primary w-100 m-2"  type="submit">Abrir Auditoria</button>
+                                <button name ="Auditoria" onclick="send('Auditoria')" class="btn btn-primary w-100 m-2"  type="submit">Abrir Auditoria</button>
                           
 
                                   <!-- ----------------- END SELECT SECTION----------------------- -->

@@ -24,7 +24,7 @@ switch (get_post_action('Atualizar')) {
               
           
               header('location: index.php?status=error');
-              
+              exit;
             }
           
           //Validando POST
